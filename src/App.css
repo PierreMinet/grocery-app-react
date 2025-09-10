@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+° {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --main-white: #F6EDED;
+  --main-red: #FF5C5C;
+  --main-black: #151515;
+  --main-gray: #737373;
+  --secondary-gray: #D3D3D3;
+  --secondary-red: #FFA7A7;
+  --secondary-brown: #C27373;
+  --border-radius: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-image: url("assets/images/background/grocery-app-background.jpg");
+  background-attachment: fixed;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+article {
+  width: 80%;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  background-color: var(--main-white);
+  height: 200px;
+  padding: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 700px) {
+  article {
+    width: 100%;
+    margin-top: 30vh;
+    margin-left: 0;
+    margin-right: 0;
+    min-height: 70vh;
   }
 }
