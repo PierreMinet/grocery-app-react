@@ -16,6 +16,14 @@
   --border-radius: 20px;
 }
 
+.main-black {
+  color: var(--main-black);
+}
+
+.main-red {
+  color: var(--main-red);
+}
+
 body {
   background-image: url("assets/images/background/grocery-app-background.jpg");
   background-attachment: fixed;
@@ -29,24 +37,129 @@ html, body {
   overflow: hidden;
 }
 
-article {
+h1, h2 {
+  text-align: center;
+  font-family: "Hahmlet", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 3.5rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.main-title {
+  margin-bottom: 8rem;
+}
+
+button {
+  display: block;
+  width: 350px;
+  height: 65px;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-radius: 50px;
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 1.2em;
+  color: var(--main-black);
+  transition-duration: 0.3s;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--secondary-red);
+}
+
+button:active {
+  background-color: var(--secondary-brown);
+}
+
+.main-button {
+  background-color: var(--main-red);
+  margin-bottom: 1rem;
+}
+
+.secondary-button {
+  background-color: var(--secondary-gray);
+}
+
+.home-div {
   width: 80%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  border-radius: var(--border-radius);
+  background-color: var(--main-white);
+  min-height: 80vh;
+  max-height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 10px 10px var(--main-black);
+}
+
+article {
+  width: 100%;
+  background-color: var(--main-white);
+}
+
+/* article {
+  width: 50%;
+  background-color: var(--main-white);
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   margin-left: auto;
   margin-right: auto;
   margin-top: 10%;
-  background-color: var(--main-white);
   height: 200px;
-  padding: 2rem;
+} */
+
+.home-picture {
+  margin-top: 0;
+  border-radius: 0%;
+  background-color: var(--main-black);
+  background-image: url("/src/assets/images/home/home_pic.jpg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@media screen and (max-width: 700px) {
+.home-register {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  width: 90%;
+  padding-left: 2.5%;
+  transform: translateX(-5%);
+  padding-top: 3.5rem;
+}
+
+/* @media screen and (max-width: 700px) {
   article {
     width: 100%;
-    margin-top: 30vh;
+    max-width: 100%;
     margin-left: 0;
     margin-right: 0;
-    min-height: 70vh;
   }
-}
+
+  .home-picture {
+    margin-top: 0;
+    border-radius: 0%;
+    min-height: 35vh;
+    max-height: 35vh;
+    background-color: var(--main-black);
+    background-image: url("/src/assets/images/home/home_pic.jpg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 150%;
+  }
+
+  .home-register {
+    margin-top: 0;
+    min-height: 70vh;
+    max-height: 70vh;
+    transform: translateY(-5%);
+  }
+} */
