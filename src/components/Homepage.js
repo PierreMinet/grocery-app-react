@@ -1,20 +1,42 @@
-import Button from "./Button";
+import { useContext } from "react";
+import Landing from "./Landing";
+import Profile from "./Profile";
+import { ConnectionContext } from "../context/ConnectionContext";
+import { LandingContext } from "../context/LandingContext";
+import Login from "./Login";
+import Register from "./Register";
 
 function Homepage() {
+    const { connection, setConnection } = useContext(ConnectionContext);
+    const { landing, setLanding } = useContext(LandingContext);
+
+    function renderSwitch(section) {
+        switch (section) {
+            case 'landing':
+                return <Landing />;
+            case 'login':
+                return <Login />;
+            case 'register':
+                return <Register />;
+            default:
+                return <p>An error occured</p>;
+        }
+    }
+
     return (
-        <div className="home-div">
-            <article className="home-picture">
-            </article>
-            <article className="home-register">
-                <h2 className="main-black">My Online</h2>
-                <h1 className="main-red main-title"
-                style={{transform: 'translateY(-5px)'}}>
-                    Grocery App
-                </h1>
-                <Button buttonClass="main-button" buttonText="Login" />
-                <Button buttonClass="secondary-button" buttonText="Register" />
-            </article>
-        </div>
+        <>
+        {connection ?
+            <div className="home-div">
+                <Profile />
+            </div>
+         :
+            <div className="home-div">
+                <article className="home-picture">
+                </article>
+                {renderSwitch(landing)};
+            </div>
+        };
+        </>
     );
 }
 
